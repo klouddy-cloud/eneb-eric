@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENEB x Eric Ponce — Promoción Exclusiva Comunidad</title>
+    <title>ENEB x Eric Ponce — MBA + Máster a Precio de Comunidad</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -16,9 +16,9 @@
             --eneb-gray: #F2F2F2;
             --eneb-text: #2D2D2D;
             --eneb-muted: #6B6B6B;
-            --gold: #C8963E;
             --serif: 'DM Serif Display', Georgia, serif;
             --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --telegram: #2AABEE;
         }
 
         body {
@@ -80,10 +80,7 @@
             margin-bottom: 40px;
         }
 
-        .hero-logos img {
-            height: 40px;
-            object-fit: contain;
-        }
+        .hero-logos img { height: 40px; object-fit: contain; }
 
         .hero-logos .x-mark {
             font-family: var(--serif);
@@ -110,7 +107,7 @@
         .hero-sub {
             font-size: clamp(18px, 2.5vw, 22px);
             opacity: 0.85;
-            max-width: 600px;
+            max-width: 620px;
             margin-bottom: 40px;
             font-weight: 400;
         }
@@ -147,6 +144,12 @@
             letter-spacing: 0.5px;
         }
 
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         .hero-cta {
             display: inline-flex;
             align-items: center;
@@ -172,16 +175,84 @@
         .hero-cta svg { transition: transform 0.2s; }
         .hero-cta:hover svg { transform: translateX(4px); }
 
+        .hero-cta-telegram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--telegram);
+            color: white;
+            padding: 18px 32px;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .hero-cta-telegram:hover {
+            background: #229ED9;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(42,171,238,0.3);
+        }
+
+        /* ========== ERIC CALLOUT ========== */
+        .eric-callout {
+            background: white;
+            padding: 40px 24px;
+        }
+
+        .eric-callout-inner {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            background: linear-gradient(135deg, #FFF8F8, #FFF0F0);
+            border: 1px solid rgba(212,34,40,0.15);
+            border-radius: 16px;
+            padding: 32px;
+        }
+
+        .eric-callout-icon {
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            background: var(--eneb-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+        }
+
+        .eric-callout-text h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .eric-callout-text p {
+            color: var(--eneb-muted);
+            font-size: 16px;
+        }
+
+        .eric-callout-text strong {
+            color: var(--eneb-red);
+        }
+
+        @media (max-width: 600px) {
+            .eric-callout-inner { flex-direction: column; text-align: center; }
+        }
+
         /* ========== VIDEO ========== */
         .video-section {
             background: var(--eneb-gray);
             padding: 60px 24px;
         }
 
-        .video-inner {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .video-inner { max-width: 800px; margin: 0 auto; }
 
         .video-label {
             text-align: center;
@@ -210,10 +281,8 @@
 
         .video-embed iframe {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
             border: none;
         }
 
@@ -272,23 +341,10 @@
             margin-bottom: 20px;
         }
 
-        .benefit-icon svg {
-            width: 24px;
-            height: 24px;
-            color: var(--eneb-red);
-        }
+        .benefit-icon svg { width: 24px; height: 24px; color: var(--eneb-red); }
 
-        .benefit-card h3 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .benefit-card p {
-            color: var(--eneb-muted);
-            font-size: 15px;
-            line-height: 1.6;
-        }
+        .benefit-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 8px; }
+        .benefit-card p { color: var(--eneb-muted); font-size: 15px; line-height: 1.6; }
 
         /* ========== PROGRAMA ========== */
         .program-highlight {
@@ -333,7 +389,32 @@
             color: var(--eneb-muted);
             font-size: 18px;
             max-width: 500px;
-            margin: 0 auto;
+            margin: 0 auto 24px;
+        }
+
+        .program-highlight-card .program-details {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #E8E8E8;
+        }
+
+        .program-detail {
+            text-align: center;
+        }
+
+        .program-detail strong {
+            display: block;
+            font-size: 20px;
+            color: var(--eneb-red);
+        }
+
+        .program-detail span {
+            font-size: 13px;
+            color: var(--eneb-muted);
         }
 
         /* ========== STATS ========== */
@@ -360,10 +441,7 @@
             margin-bottom: 8px;
         }
 
-        .stat-label {
-            font-size: 15px;
-            opacity: 0.7;
-        }
+        .stat-label { font-size: 15px; opacity: 0.7; }
 
         /* ========== CTA FINAL ========== */
         .final-cta {
@@ -391,6 +469,13 @@
             margin-bottom: 32px;
         }
 
+        .final-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
         .cta-btn {
             display: inline-flex;
             align-items: center;
@@ -411,6 +496,27 @@
             box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         }
 
+        .cta-btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--telegram);
+            color: white;
+            padding: 20px 36px;
+            border-radius: 14px;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cta-btn-telegram:hover {
+            background: #229ED9;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(42,171,238,0.3);
+        }
+
         .guarantee {
             margin-top: 24px;
             font-size: 14px;
@@ -426,10 +532,7 @@
             font-size: 13px;
         }
 
-        footer a {
-            color: rgba(255,255,255,0.6);
-            text-decoration: none;
-        }
+        footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
 
         /* ========== RESPONSIVE ========== */
         @media (max-width: 768px) {
@@ -439,6 +542,8 @@
             .benefits-grid { grid-template-columns: 1fr; }
             .stats-inner { grid-template-columns: repeat(2, 1fr); gap: 24px; }
             .program-highlight-card { padding: 32px 24px; }
+            .hero-buttons { flex-direction: column; }
+            .final-buttons { flex-direction: column; align-items: center; }
         }
 
         /* ========== ANIMATIONS ========== */
@@ -447,10 +552,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .animate-in {
-            animation: fadeUp 0.6s ease forwards;
-        }
-
+        .animate-in { animation: fadeUp 0.6s ease forwards; }
         .delay-1 { animation-delay: 0.1s; opacity: 0; }
         .delay-2 { animation-delay: 0.2s; opacity: 0; }
         .delay-3 { animation-delay: 0.3s; opacity: 0; }
@@ -475,25 +577,41 @@
             </div>
 
             <h1 class="animate-in delay-2">
-                Estudia un MBA<br>
-                en una de las mejores escuelas de negocios de Europa
+                Doble titulación:<br>MBA + Máster
                 <span> a precio de comunidad</span>
             </h1>
 
             <p class="hero-sub animate-in delay-3">
-                Acceso exclusivo para la comunidad de Eric Ponce. Formación avalada por la Universidad Isabel I con doble titulación y reconocimiento internacional.
+                Acceso exclusivo para la comunidad de Eric Ponce. Dos titulaciones en un solo programa: MBA + Máster a elegir, avaladas por la Universidad Isabel I con reconocimiento internacional.
             </p>
 
             <div class="price-block animate-in delay-4">
                 <span class="price-original">1.800€</span>
-                <span class="price-new">749€</span>
+                <span class="price-new">799€</span>
                 <span class="price-tag">BECA COMUNIDAD</span>
             </div>
 
-            <a href="https://eneb.es/" class="hero-cta animate-in delay-5" target="_blank">
-                Quiero matricularme
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
+            <div class="hero-buttons animate-in delay-5">
+                <a href="#" class="hero-cta" target="_blank">
+                    Quiero matricularme
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </a>
+                <a href="https://t.me/+YPrr_cc6IrZhZTA0" class="hero-cta-telegram" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                    Grupo de dudas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ERIC CALLOUT -->
+    <section class="eric-callout">
+        <div class="eric-callout-inner">
+            <div class="eric-callout-icon">🎓</div>
+            <div class="eric-callout-text">
+                <h3>Eric está cursando el MBA + Project Management</h3>
+                <p>No solo lo recomienda, <strong>lo está haciendo él mismo</strong>. Misma escuela, mismo programa, mismo precio que tú.</p>
+            </div>
         </div>
     </section>
 
@@ -501,7 +619,7 @@
     <section class="video-section">
         <div class="video-inner">
             <p class="video-label">Mira el vídeo completo</p>
-            <h2 class="video-title">Eric te explica por qué ha elegido ENEB</h2>
+            <h2 class="video-title">Eric te cuenta toda la historia y cómo se ha unido al máster</h2>
             <div class="video-embed">
                 <iframe src="https://www.youtube.com/embed/pph9qlCn1nc" title="Eric Ponce x ENEB" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
@@ -511,15 +629,15 @@
     <!-- VENTAJAS -->
     <section class="benefits">
         <p class="section-label">¿Por qué ENEB?</p>
-        <h2 class="section-title">Todo lo que necesitas para dar un salto profesional</h2>
+        <h2 class="section-title">Todo lo que incluye tu doble titulación</h2>
 
         <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="benefit-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
                 </div>
-                <h3>Doble Titulación</h3>
-                <p>Obtén un MBA con doble titulación avalada por la Universidad Isabel I. Créditos ECTS reconocidos en todo el Espacio Europeo de Educación.</p>
+                <h3>MBA + Máster a Elegir</h3>
+                <p>Doble titulación real: un MBA completo más el máster de especialización que prefieras. Avalado por la Universidad Isabel I con créditos ECTS europeos.</p>
             </div>
 
             <div class="benefit-card">
@@ -580,8 +698,8 @@
                 <div class="stat-label">Años de experiencia</div>
             </div>
             <div>
-                <div class="stat-number">58%</div>
-                <div class="stat-label">Beca comunidad</div>
+                <div class="stat-number">2×1</div>
+                <div class="stat-label">MBA + Máster incluido</div>
             </div>
         </div>
     </section>
@@ -589,13 +707,32 @@
     <!-- PROGRAMA DESTACADO -->
     <section class="program-highlight">
         <div class="program-highlight-inner">
-            <p class="section-label">El programa</p>
-            <h2 class="section-title" style="margin:0 auto;text-align:center;">Global MBA</h2>
+            <p class="section-label">Doble titulación</p>
+            <h2 class="section-title" style="margin:0 auto;text-align:center;">MBA + Máster a elegir</h2>
 
             <div class="program-highlight-card">
-                <span class="program-tag">MBA — BECA COMUNIDAD ERIC PONCE</span>
-                <h3>Global MBA</h3>
-                <p>Dirección y administración de empresas con visión internacional. Formación 100% online, a tu ritmo, con doble titulación universitaria.</p>
+                <span class="program-tag">BECA COMUNIDAD ERIC PONCE</span>
+                <h3>MBA + Máster</h3>
+                <p>Elige la especialización que mejor encaje contigo: Marketing Digital, Big Data & BI, IA & Data Science, Dirección Financiera, Project Management, Dirección Comercial o Coaching & Mindfulness.</p>
+
+                <div class="program-details">
+                    <div class="program-detail">
+                        <strong>100%</strong>
+                        <span>Online</span>
+                    </div>
+                    <div class="program-detail">
+                        <strong>60</strong>
+                        <span>ECTS</span>
+                    </div>
+                    <div class="program-detail">
+                        <strong>2</strong>
+                        <span>Titulaciones</span>
+                    </div>
+                    <div class="program-detail">
+                        <strong>799€</strong>
+                        <span>Con beca</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -607,13 +744,19 @@
 
         <div class="price-block">
             <span class="price-original">1.800€</span>
-            <span class="price-new">749€</span>
+            <span class="price-new">799€</span>
         </div>
 
-        <a href="https://eneb.es/" class="cta-btn" target="_blank">
-            Matricúlate ahora por 749€
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-        </a>
+        <div class="final-buttons">
+            <a href="#" class="cta-btn" target="_blank">
+                Matricúlate ahora por 799€
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="https://t.me/+YPrr_cc6IrZhZTA0" class="cta-btn-telegram" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                Grupo de dudas
+            </a>
+        </div>
 
         <p class="guarantee">Financiación disponible · Pago con tarjeta o transferencia · Plazas limitadas</p>
     </section>
